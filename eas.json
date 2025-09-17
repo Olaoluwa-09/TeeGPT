@@ -3,21 +3,16 @@
     "version": ">= 3.0.0"
   },
   "build": {
-    "android": {
+    "android-apk": {
+      "platform": "android",
       "workflow": "managed",
-      "releaseChannel": "production"
+      "releaseChannel": "production",
+      "buildType": "apk"
     },
-    "ios": {
+    "ios-adhoc": {
+      "platform": "ios",
       "workflow": "managed",
-      "releaseChannel": "production"
-    }
-  },
-  "submit": {
-    "android": {
-      "serviceAccountKeyPath": "./android-service-account.json"
-    },
-    "ios": {
-      "appleId": "your-apple-id@email.com"
+      "distribution": "internal"
     }
   }
 }
