@@ -3,10 +3,21 @@
     "version": ">= 3.0.0"
   },
   "build": {
-    "production": {
-      "env": {
-        "OPENAI_API_KEY": "sk-...IGQA"
-      }
+    "android": {
+      "workflow": "managed",
+      "releaseChannel": "production"
+    },
+    "ios": {
+      "workflow": "managed",
+      "releaseChannel": "production"
+    }
+  },
+  "submit": {
+    "android": {
+      "serviceAccountKeyPath": "./android-service-account.json"
+    },
+    "ios": {
+      "appleId": "your-apple-id@email.com"
     }
   }
 }
