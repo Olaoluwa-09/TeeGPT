@@ -3,16 +3,13 @@
     "version": ">= 3.0.0"
   },
   "build": {
-    "android-apk": {
-      "platform": "android",
-      "workflow": "managed",
-      "releaseChannel": "production",
-      "buildType": "apk"
-    },
-    "ios-adhoc": {
-      "platform": "ios",
-      "workflow": "managed",
-      "distribution": "internal"
+    "production": {
+      "android": {
+        "buildType": "apk"
+      },
+      "ios": {
+        "distribution": "internal"
+      }
     }
   }
 }
