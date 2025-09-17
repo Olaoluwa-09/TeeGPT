@@ -1,0 +1,32 @@
+{
+  "expo": {
+    "name": "TeeGPT",
+    "slug": "TeeGPT-Expo",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#07152b"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#07152b"
+      },
+      "package": "com.anonymous.TeeGPTExpo"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "0e15c441-7dd2-4ffa-b315-54fd5852a737"
+      }
+    }
+  }
+}
