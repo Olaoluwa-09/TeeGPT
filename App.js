@@ -8,6 +8,8 @@ export default function App() {
   const [messages, setMessages] = useState([]);
   const [isListening, setIsListening] = useState(false);
 
+  const apiKey = process.env.OPENAI_API_KEY;
+
   useEffect(() => {
     Voice.onSpeechResults = (e) => {
       if (e.value && e.value.length > 0) {
@@ -49,7 +51,7 @@ export default function App() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`,
+          'Authorization': `Bearer ${apiKey}`,
         },
         body: JSON.stringify({
           model: 'gpt-4o-mini',
@@ -58,10 +60,10 @@ export default function App() {
       });
 
       const data = await res.json();
-      const aiText = data.choices[0].message.content;
+      const aiText = data.choices?.[0]?.message?.content || 'No response';
 
       setMessages((prev) => [...prev, { role: 'assistant', content: aiText }]);
-      Speech.speak(aiText); // 🔊 Speak the AI reply out loud
+      Speech.speak(aiText);
     } catch (err) {
       console.error(err);
     }
